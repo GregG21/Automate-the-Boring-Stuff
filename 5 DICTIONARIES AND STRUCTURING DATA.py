@@ -6,8 +6,10 @@ def displayInventory(inventory):
     item_total = 0
     for k, v in inventory.items():
         item_total += v
-        print("%s %i" % (k , v))
-    print("Total number of items: " + str(item_total))
+        # print("%s %i" % (k , v))
+        print(f'{k} {v}')
+    # print("Total number of items: " + str(item_total))
+    print(f'Total number of items: {item_total}')
 
 # displayInventory(stuff)
 
