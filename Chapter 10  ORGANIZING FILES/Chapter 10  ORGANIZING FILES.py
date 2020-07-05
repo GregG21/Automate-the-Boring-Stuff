@@ -39,6 +39,7 @@ from pathlib import Path
 
 import shutil, os, re
 
+
 datePattern = re.compile(r"""^(.*?) # all text before the date
        ((0|1)?\d)-                     # one or two digits for the month
        ((0|1|2|3)?\d)-                 # one or two digits for the day
