@@ -1,4 +1,5 @@
-import webbrowser, sys, pyperclip, requsts
+import webbrowser, sys, pyperclip, requests
+
 
 if len(sys.argv) > 1:
 
