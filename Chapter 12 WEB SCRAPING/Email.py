@@ -1,7 +1,6 @@
 
 from selenium import webdriver
 from selenium.webdriver.common.by import By
-import time
 from selenium.webdriver.common.keys import Keys
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
@@ -9,17 +8,17 @@ from selenium.webdriver.support import expected_conditions as EC
 def Email(email, string):
     browser = webdriver.Firefox()
     browser.get("https://mail.google.com/mail/u/0/")
-
+    # LOGIN
     emailAddressField = browser.find_element(By.TAG_NAME, "input")
-    emailAddressField.send_keys("atbstest4@gmail.com")
+    emailAddressField.send_keys("email@gmail.com")
     emailAddressField.send_keys(Keys.ENTER)
 
     wait = WebDriverWait(browser, 10) #most time it waits if not clickable
     passwwordInput = wait.until(EC.element_to_be_clickable((By.CSS_SELECTOR, "input[type='password']")))
-    passwwordInput.send_keys("Gabric123")
+    passwwordInput.send_keys("password")
     passwwordInput.send_keys(Keys.ENTER)
 
-
+    # COMPOSE EMAIL
     compose = wait.until(EC.element_to_be_clickable((By.CLASS_NAME, "aic")))
     compose.click()
 
@@ -32,7 +31,7 @@ def Email(email, string):
 
     fillOutMessage = browser.find_element(By.CSS_SELECTOR, "div[aria-label='Message Body']")
     fillOutMessage.send_keys(string)
-    fillOutMessage.send_keys(Keys.CONTROL + Keys.ENTER)
+    fillOutMessage.send_keys(Keys.CONTROL + Keys.ENTER) #SEND EMAIL
 
     browser.close()
 
