@@ -41,7 +41,7 @@ def Email(email, string):
 
 
 
-Email("rakomarusa@gmail.com","ZANDJE SPOROCILO ")
+Email("sample.email@gmail.com","Whatever")
 
 
 
